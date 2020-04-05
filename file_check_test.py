@@ -10,15 +10,13 @@ modOrdnerPath = "F:\\Users\\Mathias Kowitz\\Documents\\My Games\\FarmingSimulato
 saveGamePath = "F:\\Users\\Mathias Kowitz\\Documents\\My Games\\FarmingSimulator2019\\savegame19\\careerSavegame.xml"  # Savegame Path
 
 modFiles = [f for f in glob.glob(modOrdnerPath + "**/*.zip", recursive=True)]  # Mit einer List comprehension mithilfe von glob alle Dateien parsen
-tmp = []
+modNames = []
 
 for e in modFiles:
-    tmp.append(e.split('\\'))
+    modNames.append(e.split('\\')[7][:-4])
 
-#print(tmp[0][7][:-4])
-
-for e in tmp:
-    print(e[7][:-4])
+# for e in modNames:
+#    print(e)
 
 
 
@@ -33,4 +31,13 @@ for mod in root.iter('mod'):  # Mit einer Schleife ueber die Elemente der XML ge
 
 # print(activeMods)
 
-# TODO Test ob ein Element in einer anderen Liste ist
+# Test ob ein Element in einer anderen Liste ist
+for mod in modNames:
+    if mod in activeMods:
+        print("Die Mod: " + mod + " gehoert in den Spielstand.")
+    else:
+        print("Die Mod: " + mod + " gehoert NICHT in den Spielstand.")
+
+print("")
+print("Mods insgesamt im Ordner: " + str(len(modNames)))
+print("Mods insgesamt im Spielstand aktiviert: " + str(len(activeMods)))
