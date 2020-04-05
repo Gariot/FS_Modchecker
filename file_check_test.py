@@ -4,19 +4,17 @@ https://mkyong.com/python/python-how-to-list-all-files-in-a-directory/
 """
 import glob
 import xml.etree.ElementTree as ET
+import file_paths as mod_paths
 
-# Hier werden alle Mods die derzeitig im Mod verzeichnis sind eingelesen
-modOrdnerPath = "F:\\Users\\Mathias Kowitz\\Documents\\My Games\\FarmingSimulator2019\\mods\\"  # Pfad zum Mod Ordner
-saveGamePath = "F:\\Users\\Mathias Kowitz\\Documents\\My Games\\FarmingSimulator2019\\savegame19\\careerSavegame.xml"  # Savegame Path
 
-modFiles = [f for f in glob.glob(modOrdnerPath + "**/*.zip", recursive=True)]  # Mit einer List comprehension mithilfe von glob alle Dateien parsen
+modFiles = [f for f in glob.glob(mod_paths.modOrdnerPath + "**/*.zip", recursive=True)]  # Mit einer List comprehension mithilfe von glob alle Dateien parsen
 modNames = []
 
 for e in modFiles:
     modNames.append(e.split('\\')[7][:-4])
 
 # Hier werden die Aktiven Mods bestimmt
-saveGame = ET.parse(saveGamePath)  # XML des Savegames parsen
+saveGame = ET.parse(mod_paths.saveGamePath)  # XML des Savegames parsen
 root = saveGame.getroot()  # Die "wurzel" abspeichern
 activeMods = []  # Leere Liste fuer die aktiven mods generieren
 
