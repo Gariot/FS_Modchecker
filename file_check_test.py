@@ -33,7 +33,7 @@ for mod in modFiles:
     if any([y in mod for y in activeMods]):
         print("Die Mod: " + mod + " ist aktiv.")
     else:
-        print("Die Mod: " + mod + " ist nicht aktiv.")
+        print("Die Mod: " + mod + " ist NICHT aktiv.")
 
 # Stats
 print("")
