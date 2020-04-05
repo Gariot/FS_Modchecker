@@ -15,11 +15,6 @@ modNames = []
 for e in modFiles:
     modNames.append(e.split('\\')[7][:-4])
 
-# for e in modNames:
-#    print(e)
-
-
-
 # Hier werden die Aktiven Mods bestimmt
 saveGame = ET.parse(saveGamePath)  # XML des Savegames parsen
 root = saveGame.getroot()  # Die "wurzel" abspeichern
@@ -28,8 +23,6 @@ activeMods = []  # Leere Liste fuer die aktiven mods generieren
 for mod in root.iter('mod'):  # Mit einer Schleife ueber die Elemente der XML gehen die "mod" im tag haben
     # print(mod.get('modName'))
     activeMods.append(mod.get('modName'))  # den Modnamen in die Liste einfuegen
-
-# print(activeMods)
 
 # Test ob ein Element in einer anderen Liste ist
 for mod in modNames:
