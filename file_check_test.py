@@ -1,10 +1,10 @@
 """
-Source:
+Source fuer den "glob" teil:
 https://mkyong.com/python/python-how-to-list-all-files-in-a-directory/
 """
 import glob
 import xml.etree.ElementTree as ET
-import file_paths as mod_paths
+import file_paths as mod_paths  # file_paths enthaelt alle absoluten pfade zu den benoetigten files
 
 modFiles = [f for f in glob.glob(mod_paths.modOrdnerPath + "**/*.zip", recursive=True)]  # Mithilfe von glob alle
 #                                                                                          Dateien parsen
