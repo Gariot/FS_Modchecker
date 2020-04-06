@@ -29,7 +29,8 @@ for mod in modNames:
         print("Die Mod: " + mod + " gehoert in den Spielstand/Modordner.")
     else:
         print("Die Mod: " + mod + " gehoert NICHT in den Spielstand/Modordner.")
-        shutil.move(mod_paths.modOrdnerPath + mod + ".zip", mod_paths.modBackup)
+        shutil.move(mod_paths.modOrdnerPath + mod + ".zip", mod_paths.modBackup)  # Datei in anderes verzeichnis
+#                                                                                   verschieben
 
 # for mod in modFiles:
 #    if any([y in mod for y in activeMods]):
@@ -39,7 +40,9 @@ for mod in modNames:
 #        shutil.move(mod, mod_paths.modBackup)
 
 # Stats
+# Die Stats sind nicht 100% akkurat weil die "modNames" liste nicht aktuallisiert wird nachdem evt dateien verschoben
+# wurden.
 print("")
-print("Mods insgesamt im Ordner: " + str(len(modFiles)))
+print("Mods insgesamt im Ordner: " + str(len(modNames)))
 print("Mods insgesamt im Spielstand aktiviert: " + str(len(activeMods)))
 print("")
