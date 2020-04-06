@@ -39,5 +39,5 @@ for mod in modFiles:
 print("")
 print("Mods insgesamt im Ordner: " + str(len(modFiles)))
 print("Mods insgesamt im Spielstand aktiviert: " + str(len(activeMods)))
-print("")
+print("Apfel")
 
