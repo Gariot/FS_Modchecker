@@ -37,7 +37,7 @@ for mod in modFiles:
 
 # Stats
 print("")
-print("Mods insgesamt im Ordner: " + str(len(modNames)))
+print("Mods insgesamt im Ordner: " + str(len(modFiles)))
 print("Mods insgesamt im Spielstand aktiviert: " + str(len(activeMods)))
 print("Apfel")
 
