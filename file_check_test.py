@@ -29,7 +29,7 @@ for mod in modNames:
         print("Die Mod: " + mod + " gehoert in den Spielstand/Modordner.")
     else:
         print("Die Mod: " + mod + " gehoert NICHT in den Spielstand/Modordner.")
-        shutil.move(mod_paths.modOrdnerPath + mod + ".zip", mod_paths.modBackup)  # Datei in anderes verzeichnis
+        # shutil.move(mod_paths.modOrdnerPath + mod + ".zip", mod_paths.modBackup)  # Datei in anderes verzeichnis
 #                                                                                   verschieben
 
 # for mod in modFiles:
